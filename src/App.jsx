@@ -1,20 +1,27 @@
-import { useEffect } from 'react';
-import './App.css';
+import { useEffect } from "react";
+import "./App.css";
 
-import gsap from 'gsap';
-import { Draggable } from 'gsap/Draggable';
+import gsap from "gsap";
+import { Draggable } from "gsap/Draggable";
 
-// Register once only
+// Register GSAP Draggable
 gsap.registerPlugin(Draggable);
 
 // Components
-import { Navbar, Welcome, ButtomNav } from './components/index';
-import { Safari, Terminal,Resume, Finder,Contact,Image,Videos } from './windows/index.js';
+import { Navbar, Welcome, ButtomNav, Home } from "./components/index";
+import {
+  Safari,
+  Terminal,
+  Resume,
+  Finder,
+  Contact,
+  Image,
+  Videos,
+} from "./windows/index.js";
 
 function App() {
-
   useEffect(() => {
-    document.body.style.overflow = "hidden"; 
+    document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -22,27 +29,31 @@ function App() {
 
   return (
     <div className="w-full h-screen overflow-hidden text-white relative">
-
-      {/* Top UI */}
+      {/* Navbar */}
       <Navbar />
-      <Welcome />
 
-      {/* Bottom Navigation (fixed to bottom) */}
-      <div className="fixed bottom-4 left-0 right-0 flex justify-center z-40">
+      {/* Main Content */}
+      <div className="relative z-10">
+        <Welcome />
+      </div>
+
+      {/* Bottom Navigation */}
+      <div className="fixed bottom-4 left-0 right-0 flex justify-center z-20">
+                <Home />
+
         <ButtomNav />
       </div>
 
-      {/* Windows Layer */}
-      <div className="absolute inset-0 pointer-events-none z-50">
-        {/* Windows MUST stay on a dedicated layer */}
+      {/* Windows Layer (Draggable) */}
+      <div className="absolute inset-0 z-50 pointer-events-none">
         <div className="pointer-events-auto">
           <Terminal />
-          <Safari/>
+          <Safari />
           <Resume />
           <Finder />
           <Contact />
-          <Image/>
-          <Videos/>
+          <Image />
+          <Videos />
         </div>
       </div>
     </div>
