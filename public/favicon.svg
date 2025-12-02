@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Background Circle -->
+  <circle cx="32" cy="32" r="32" fill="#1c1c1e" />
+
+  <!-- Initials JC -->
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle"
+        font-family="Arial, sans-serif" font-size="28" fill="#ffffff" font-weight="bold">
+    JC
+  </text>
+</svg>
