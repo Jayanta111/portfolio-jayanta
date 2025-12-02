@@ -95,6 +95,8 @@ const WINDOW_CONFIG = {
     zIndex: INITIAL_Z_INDEX,
     data: null,
   },
+    about: { isOpen: false },
+
   safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
@@ -320,29 +322,59 @@ export const ABOUT_LOCATION = {
   filetype: "markdown",
   position: "top-10 left-10",
   windowPosition: "top-[12vh] left-[20vw]",
-
   description: [
     " 👋 Hey, I'm Jayanta Chungkrang",
     "MERN Stack Developer",
-
     "I'm a passionate MERN Stack Developer currently pursuing a B.Tech in Computer Science and Engineering. I love turning ideas into impactful web applications and crafting seamless digital experiences.",
-
     " 💻 What I Do",
     "I specialize in building dynamic, end-to-end web applications using:",
     "- MongoDB",
     "- Express.js",
     "- React.js",
     "- Node.js",
-
-    "I enjoy exploring new technologies, solving real-world problems through clean, efficient code, and constantly pushing my creative boundaries to build innovative tech solutions.",
-
-    " 📍 Location",
-    "Punjab, India",
-
-    "📧 Contact",
-    "Email: jayantachungkrang3@gmail.com",
   ],
 };
+ const educationData = [
+  {
+    id: 1,
+    title: "B.Tech (CSE)",
+    institution: "Punjab Technical University",
+    year: "2024 - Present",
+    image: "/PTU.jpg",
+  },
+  {
+    id: 2,
+    title: "Diploma in Computer Engineering",
+    institution: "Nowgong Polytechnic, Assam",
+    year: "2021 - 2024",
+    image: "/Nowgong Poly.jpg",
+  },
+   {
+    id: 2,
+    title: " 12th Standard",
+    institution: "Dhemaji  College, Assam",
+    year: "2017 - 2019",
+    image: "/Dhemaji College.jpeg",
+  },
+];
+
+ const achievementData = [
+  {
+    id: 1,
+    title: "Former Elected General Secretary of Nowgong Polytechnic Student Union",
+    image:"/GS.jpg",
+    description:
+      "As a former GS, I developed strong leadership and organizational skills by managing student activities, coordinating events, and representing student interests. This experience enhanced my ability to work in a team, communicate effectively, and handle responsibilities under pressure.",
+  },
+  
+  {
+    id: 2,
+    title: "Full Stack MERN Developer",
+    image:"MERN-Stack-Development.png",
+    description:
+      "Developed full MERN projects including booking systems & admin dashboards.",
+  },
+];
 
 //Location
 const locations = {
@@ -437,4 +469,6 @@ export {
   locations,
   images,
   videos,
+  educationData,
+  achievementData,
 };

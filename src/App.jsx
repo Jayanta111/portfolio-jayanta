@@ -17,6 +17,7 @@ import {
   Contact,
   Image,
   Videos,
+  About,
 } from "./windows/index.js";
 
 function App() {
@@ -53,8 +54,8 @@ function App() {
           <Contact />
           <Image />
           <Videos />
-                  <Home/>
-
+             <Home/>
+              <About/>
         </div>
       </div>
     </div>
