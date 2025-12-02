@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { Home } from "./index.js";
 
 const FONT_WEIGHTS = {
   subtitle: { min: 100, max: 400, base: 100 },
@@ -19,7 +20,6 @@ const renderText = (text, className, baseWeight = 200) => {
   ));
 };
 
-// Hover animation handler (STRONGER + VISIBLE)
 const setTextHover = (container, type) => {
   if (!container) return;
 
@@ -53,10 +53,8 @@ const setTextHover = (container, type) => {
   letters.forEach((letter) => {
     const enterHandler = () => onEnter(letter);
     const leaveHandler = () => onLeave(letter);
-
     letter.addEventListener("mouseenter", enterHandler);
     letter.addEventListener("mouseleave", leaveHandler);
-
     listeners.push({ letter, enterHandler, leaveHandler });
   });
 
@@ -68,7 +66,6 @@ const setTextHover = (container, type) => {
   };
 };
 
-
 function Welcome() {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
@@ -76,7 +73,6 @@ function Welcome() {
   useEffect(() => {
     const cleanup1 = setTextHover(titleRef.current, "title");
     const cleanup2 = setTextHover(subtitleRef.current, "subtitle");
-
     return () => {
       cleanup1 && cleanup1();
       cleanup2 && cleanup2();
@@ -85,10 +81,18 @@ function Welcome() {
 
   return (
     <section
-      id="welcome"
-      aria-labelledby="welcome-title"
-      className="welcome-section flex flex-col items-center justify-center min-h-screen from-blue-50 to-purple-100 px-4"
-    >
+  id="welcome"
+  className="welcome-section min-h-screen w-full flex justify-center items-center px-6 py-10"
+>
+  <div className="flex flex-col md:flex-row items-center justify-center gap-16 w-full max-w-7xl h-full">
+
+    {/* Left Home Icons */}
+    {/* <div className="hidden md:flex w-1/3 h-full justify-center items-center">
+      <Home />
+    </div> */}
+
+    {/* Right Welcome Text */}
+    <div className="flex flex-col justify-center items-center text-center w-full md:w-2/3">
       <p
         ref={subtitleRef}
         className="subtitle text-lg md:text-xl font-medium text-gray-300 mb-4"
@@ -101,9 +105,8 @@ function Welcome() {
       </p>
 
       <h1
-        id="welcome-title"
         ref={titleRef}
-        className="mt-7 text-4xl md:text-6xl font-bold text-gray-100 tracking-tight"
+        className="mt-4 md:mt-7 text-4xl md:text-6xl font-bold text-gray-100 tracking-tight"
       >
         {renderText(
           "Portfolio",
@@ -112,16 +115,17 @@ function Welcome() {
         )}
       </h1>
 
-      <div
-        className="small-screen mt-8 bg-yellow-100 border-l-4 border-yellow-400 p-4 rounded shadow-md max-w-md text-gray-800 block md:hidden"
-        role="note"
-      >
+      {/* Mobile Note */}
+      <div className="mt-6 bg-yellow-100 border-l-4 border-yellow-400 p-4 rounded shadow-md max-w-md block md:hidden">
         <p>
           This portfolio is optimized for desktop and tablet screens. Please
           enable desktop mode in your browser for the best experience.
         </p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
   );
 }
 

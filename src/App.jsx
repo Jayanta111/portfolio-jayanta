@@ -39,7 +39,6 @@ function App() {
 
       {/* Bottom Navigation */}
       <div className="fixed bottom-4 left-0 right-0 flex justify-center z-20">
-                <Home />
 
         <ButtomNav />
       </div>
@@ -54,6 +53,8 @@ function App() {
           <Contact />
           <Image />
           <Videos />
+                  <Home/>
+
         </div>
       </div>
     </div>
