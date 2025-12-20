@@ -85,7 +85,7 @@ function Home() {
               <span className="w-3 h-3 rounded-full bg-yellow-400 hover:opacity-80" />
               <span className="w-3 h-3 rounded-full bg-green-500 hover:opacity-80" />
             </div>
-            <h2 className="font-semibold text-sm">{folder.name}</h2>
+            <h2 className="font-semibold text-sm text-gray-700 dark:text-gray-50">{folder.name}</h2>
             <div className="w-6" />
           </div>
 
@@ -124,7 +124,7 @@ function Home() {
           <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg w-full max-w-lg max-h-[80vh] overflow-y-auto shadow-2xl">
 
             <div className="flex justify-between items-center cursor-move mb-4">
-              <h2 className="text-xl font-semibold">{selectedFile.name}</h2>
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-50">{selectedFile.name}</h2>
               <button onClick={() => setSelectedFile(null)}>
                 <X size={20} />
               </button>
