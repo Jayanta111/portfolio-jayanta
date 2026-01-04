@@ -414,8 +414,10 @@ const images = [
   },
   {
     id: 2,
-    title: "Another Video",
-    url: "https://player.cloudinary.com/embed/?cloud_name=dwr5flpva&public_id=sample_abcxyz&profile=cld-default"
+    title: "Recipe Finder ",
+    url: "https://player.cloudinary.com/embed/?cloud_name=dwr5flpva&public_id=Recipe%20Finder&profile=cld-default",
+     thumbnail:"/Recipe Finder.png"
+
   }
 ];
 export const socialLinks = [
